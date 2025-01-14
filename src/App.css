@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
-}
+/* App.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Общие стили для всего приложения */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f06, #48c6ef); /* Градиентный фон */
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Контейнер для всего приложения */
+.app-container {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Стиль для заголовка */
+.question {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Контейнер для кнопок */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Стиль для кнопок */
+.answer-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #48c6ef;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  font-weight: bold;
+}
+
+/* Эффект при наведении на кнопку */
+.answer-button:hover {
+  background-color: #f06;
+  transform: scale(1.1);
+}
+
+/* Эффект при нажатии на кнопку */
+.answer-button:active {
+  transform: scale(0.95);
 }

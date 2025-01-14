@@ -9,32 +9,40 @@ const App = () => {
   ];
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [endQuestions, setEndQuestions] = useState(null);
 
   const handleAnswer = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      alert("Вы ответили на все вопросы!");
+      setEndQuestions("Вы ответили на все вопросы!");
     }
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>{questions[currentQuestionIndex]}</h1>
-      <div style={{ marginTop: '20px' }}>
-        <button 
-          style={{ marginRight: '20px', padding: '10px 20px', fontSize: '16px' }}
-          onClick={handleAnswer}
-        >
-          Да
-        </button>
-        <button 
-          style={{ padding: '10px 20px', fontSize: '16px' }}
-          onClick={handleAnswer}
-        >
-          Нет
-        </button>
-      </div>
+    <div className="app-container">
+      {endQuestions === null ? (
+        <>
+          <h1 className="question">{questions[currentQuestionIndex]}</h1>
+          <div className="button-container">
+            <button className="answer-button" onClick={handleAnswer}>
+              Да
+            </button>
+            <button className="answer-button" onClick={handleAnswer}>
+              Нет
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          <h1 className="question">{endQuestions}</h1>
+          <div className="button-container">
+          <button className="answer-button" onClick={handleAnswer}>
+            Забрать напиток
+          </button>
+        </div>
+      </>
+      )}
     </div>
   );
 };
